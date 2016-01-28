@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Football Map</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://bootswatch.com/cosmo/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/site.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="/js/map.js"></script>
+    <script src="/js/fbs.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col col-sm-9">
+            <div id="map"></div>
+        </div>
+        <div class="col col-sm-3 sidebar">
+            <h2 style="padding-left:15px;"><span data-bind="text: teams().length"></span> Teams</h2>
+            <div class="list-group" data-bind="foreach: teams()">
+                <a class="list-group-item" data-bind="click: onClick">
+                    <h3><span data-bind="text: team"></span> <span data-bind="text: name"></span></h3>
+                    <p><span data-bind="text: city"></span>, <span data-bind="text: state"></p>
+                    <p><span data-bind="text: lat"></span> / <span data-bind="text: lng"></p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    var map = L.map('map');
+    var viewModel = new FootballViewModel(conferences);
+    ko.applyBindings(viewModel);
+    viewModel.generateMap();
+    </script>
+
+</body>
+</html>
