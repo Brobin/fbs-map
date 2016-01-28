@@ -63,6 +63,15 @@ function FootballViewModel(conferences) {
                 }
             });
         });
+        _teams.sort(function(a, b){
+            if (a.team < b.team){
+                return -1;
+            } else if (a.team > b.team){
+                return 1;
+            } else {
+                return 0;
+            }
+        })
         self.teams(_teams);
     }
 
