@@ -79,7 +79,7 @@ function FootballViewModel(conferences) {
         var attr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
                 '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
                 'Imagery &copy; <a href="http://mapbox.com">Mapbox</a>';
-        var url = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHm';
+        var url = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
 
         var street = L.tileLayer(url, {maxZoom: 18, attribution: attr, id: 'mapbox.streets'}).addTo(map);
         var pirate = L.tileLayer(url, {maxZoom: 18, attribution: attr, id: 'mapbox.pirates'});
